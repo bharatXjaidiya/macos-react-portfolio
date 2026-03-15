@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: black;
+}
+#root,main{
+    width: 100%;
+    height: 100%;
+}
+main{
+    background-image: url("../public/mac-wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+}
