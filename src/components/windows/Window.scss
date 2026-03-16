@@ -1,0 +1,32 @@
+.window{
+    width: 500px;
+    height: 400px;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    .window-nav{
+        display: flex;
+        gap: 5px;
+        border-bottom: 1px solid gray;
+        padding: 3px 5px;
+        p{
+            color: rgb(139, 135, 135);
+        }
+        .dot{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            
+        }
+        .red{
+                background-color: rgb(226, 48, 48);
+            }
+            .yellow{
+                background-color: rgb(222, 222, 81);
+            }
+            .green{
+                background-color: rgb(28, 172, 28);
+                margin-right: 5px;
+            }
+    }
+}

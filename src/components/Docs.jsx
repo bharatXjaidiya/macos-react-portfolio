@@ -21,7 +21,7 @@ const Dock = () => {
             <div
                 className="icon cli"><img src="/doc-icons/cli.svg" alt="" /></div>
         </footer>
-    )
+    ) 
 }
 
 export default Dock
