@@ -3,6 +3,8 @@ import "./app.scss"
 import Docs from "./components/docs"
 import Navbar from "./components/Navbar"
 import MacWindow from "./components/windows/MacWindow"
+import Github from "./components/windows/Github"
+import Notes from "./components/windows/Notes"
 
 const App = () => {
 
@@ -10,9 +12,8 @@ const App = () => {
     <main>
       <Navbar />
       <Docs />
-      <MacWindow>
-        <h1>hello</h1>
-      </MacWindow>
+      <Github/>
+      <Notes/>
     </main>
   )
 }

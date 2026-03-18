@@ -1,8 +1,7 @@
 .window{
-    width: 500px;
-    height: 400px;
     background-color: black;
     border-radius: 10px;
+    height: 100%;
     overflow: hidden;
     .window-nav{
         display: flex;
@@ -28,5 +27,8 @@
                 background-color: rgb(28, 172, 28);
                 margin-right: 5px;
             }
+    }
+    .main-content{
+        height: 100%;
     }
 }
