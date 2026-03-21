@@ -1,5 +1,12 @@
 .git-hub{
     height: 100%;
-   overflow: hidden;
-
+    overflow: scroll;
+    padding: 10px;
+}
+.git-hub-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 15px;
+    justify-content: center;
 }

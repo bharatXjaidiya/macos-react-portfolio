@@ -1,0 +1,22 @@
+import React from 'react'
+import "./Card.scss"
+const Card = ({imgUrl,title,description,tags,repoLink,demoLink}) => {
+  return (
+    <div className='card'>
+        <img src={imgUrl} alt="" />
+        <p className='title'>{title}</p>
+        <p className="description">{description}</p>
+        <div className="tags">
+            {tags.map((t)=>{
+                return <p className='tag'>{t}</p>
+            })}
+        </div> 
+        <div className="links">
+            <a href={repoLink}>Repository Link</a>
+            <a href={demoLink}>Demo Link</a>
+        </div>
+    </div>
+  )
+}
+
+export default Card
