@@ -13,7 +13,7 @@ const Notes = () => {
 },[])
 
   return (
-    <MacWindow>
+    <MacWindow w="600" h="410">
     <div className='main-content-notes'>
         <Markdown>{text}</Markdown>
     </div>

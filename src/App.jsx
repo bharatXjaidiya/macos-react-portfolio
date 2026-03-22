@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import MacWindow from "./components/windows/MacWindow"
 import Github from "./components/windows/Github"
 import Notes from "./components/windows/Notes"
+import Spotify from "./components/windows/Spotify"
 
 const App = () => {
 
@@ -12,8 +13,9 @@ const App = () => {
     <main>
       <Navbar />
       <Docs />
-      <Github/>
-      <Notes/>
+      {/* <Github/> */}
+      {/* <Notes/> */}
+      <Spotify/>
     </main>
   )
 }

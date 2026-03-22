@@ -3,12 +3,9 @@ import MacWindow from './MacWindow'
 import "./Github.scss"
 import githubData from "../../assets/github.json"
 import Card from './Card'
-const Github = () => {
-    console.log(githubData[0])
-
-
+const Github = () => { 
   return (
-    <MacWindow>
+    <MacWindow w="600" h="470">
     <div className='git-hub'>
         <div className="git-hub-cards">
             {githubData.map((projects)=>{

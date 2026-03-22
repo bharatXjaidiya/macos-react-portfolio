@@ -7,8 +7,8 @@ const Card = ({imgUrl,title,description,tags,repoLink,demoLink}) => {
         <p className='title'>{title}</p>
         <p className="description">{description}</p>
         <div className="tags">
-            {tags.map((t)=>{
-                return <p className='tag'>{t}</p>
+            {tags.map((t,idx)=>{
+                return <p key={idx} className='tag'>{t}</p>
             })}
         </div> 
         <div className="links">
