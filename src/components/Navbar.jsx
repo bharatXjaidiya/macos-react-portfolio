@@ -13,7 +13,9 @@ const Navbar = () => {
         </div>
         <div className="nav-right">
             <img src="../public/navbar-icons/wifi.svg" alt="" className="wifi-icon" />
-            <Time/>
+            <div className='time'>
+              <Time/>
+              </div>
         </div>
     </nav>
   )
