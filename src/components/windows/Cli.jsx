@@ -3,7 +3,7 @@ import Terminal from 'react-console-emulator'
 import MacWindow from './MacWindow';
 import "./Cli.scss"
 
-const Cli = () => {
+const Cli = ({windowName,display,setDisplay}) => {
     const welcomeText = `
 ╔═════════════════════════════════════════╗
 ║Welcome to Bharat Jaidiya's Portfolio CLI║
@@ -46,7 +46,7 @@ Type 'help' to see all available commands.
   }
 }
   return (
-    <MacWindow w="600" h="300">
+    <MacWindow  windowName={windowName} display={display} setDisplay={setDisplay} w="600" h="300">
       <div className='cli-window'>
       <Terminal
         commands={commands}

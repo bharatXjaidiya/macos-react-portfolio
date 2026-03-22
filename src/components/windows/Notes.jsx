@@ -2,7 +2,8 @@ import React, { useEffect,useState} from 'react'
 import MacWindow from './MacWindow'
 import Markdown from 'react-markdown'
 import "./Notes.scss"
-const Notes = () => {
+const Notes = ({windowName,display,setDisplay}) => {
+ 
   const [text, setText] = useState(null)
     useEffect(()=>{
     fetch("/note.txt").then((res)=>{
@@ -13,12 +14,12 @@ const Notes = () => {
 },[])
 
   return (
-    <MacWindow w="600" h="410">
+    <MacWindow windowName={windowName} display={display} setDisplay={setDisplay} w="600" h="410">
     <div className='main-content-notes'>
         <Markdown>{text}</Markdown>
     </div>
-    </MacWindow>        
+    </MacWindow >        
   )
 }
 
-export default Notes
+export default Notes 

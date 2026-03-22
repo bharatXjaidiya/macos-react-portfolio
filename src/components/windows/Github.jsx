@@ -3,9 +3,9 @@ import MacWindow from './MacWindow'
 import "./Github.scss"
 import githubData from "../../assets/github.json"
 import Card from './Card'
-const Github = () => { 
+const Github = ({windowName,display,setDisplay}) => { 
   return (
-    <MacWindow w="600" h="470">
+    <MacWindow  windowName={windowName} display={display} setDisplay={setDisplay} w="600" h="470">
     <div className='git-hub'>
         <div className="git-hub-cards">
             {githubData.map((projects)=>{
@@ -13,7 +13,7 @@ const Github = () => {
         })}
         </div>
     </div>
-    </MacWindow>        
+    </MacWindow >        
   )
 }
 
