@@ -8,6 +8,12 @@
         gap: 5px;
         border-bottom: 1px solid gray;
         padding: 3px 5px;
+        position: overflow;
+        width: 100%;
+        background-color: rgb(31, 30, 30);
+        border-radius: 5px;
+        border-bottom: none;
+        
         p{
             color: rgb(139, 135, 135);
         }

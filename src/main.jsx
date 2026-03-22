@@ -1,9 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import { TerminalContextProvider } from "react-terminal";
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <TerminalContextProvider>
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  </TerminalContextProvider>
+
 )

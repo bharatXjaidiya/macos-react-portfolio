@@ -1,0 +1,11 @@
+.cli-window{
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(34, 32, 32);
+    div[name="react-console-emulator"] {
+        max-height: none !important;
+        padding-bottom: 5rem;
+    background-color: transparent !important;
+}
+
+}
