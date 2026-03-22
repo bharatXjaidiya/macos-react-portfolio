@@ -11,13 +11,13 @@ const Dock = ({display,setDisplay}) => {
                 className="icon note"><img src="/doc-icons/note.svg" alt="" /></div>
             <div onClick={() => {display.resume ? setDisplay({ ...display, resume: false }) : setDisplay({ ...display, resume: true })}}
                 className="icon pdf"><img src="/doc-icons/pdf.svg" alt="" /></div>
-            <div onClick={() => {setDisplay({ ...display, github: true })}}
+            <div onClick={() => {window.open('https://calendar.google.com/calendar/r', '_blank')}}
                 className="icon calender"><img src="/doc-icons/calender.svg" alt="" /></div>
             <div onClick={() => {setDisplay({ ...display, spotify: true })}}
                 className="icon spotify"><img src="/doc-icons/spotify.svg" alt="" /></div>
-            <div onClick={() => {setDisplay({ ...display, github: true })}}
+            <div onClick={() => {window.open('mailto:jaidiyabharat16@gmail.com', '_blank')}}
                 className="icon mail"><img src="/doc-icons/mail.svg" alt="" /></div>
-            <div onClick={() => {setDisplay({ ...display, github: true })}}
+            <div onClick={() => {window.open("https://www.linkedin.com/in/bharat-jaidiya-8b89b32ab/", '_blank')}}
                 className="icon link"><img src="/doc-icons/link.svg" alt="" /></div>
             <div onClick={() => {setDisplay({ ...display, cli: true })}}
                 className="icon cli"><img src="/doc-icons/cli.svg" alt="" /></div>
