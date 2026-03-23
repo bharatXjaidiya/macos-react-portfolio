@@ -2,15 +2,16 @@ import React, { useState, memo, useCallback } from 'react'
 import "./Window.scss"
 import { Rnd } from 'react-rnd'
 
-const MacWindow = memo(({ windowName, display, setDisplay, h, w, children }) => {
+const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bringToFront }) => {
 
     const [x, setX] = useState(50);
     const [y, setY] = useState(50);
-    const [closing, setClosing] = useState(false); // ✅ FIXED (inside component)
+    const [closing, setClosing] = useState(false);
+    const [zIndex, setZIndex] = useState(10); // Start with base z-index
 
     const handleDrag = useCallback((d) => {
         setX(d.x < 0 ? 0 : d.x > window.innerWidth - (w / 4) ? window.innerWidth - (w / 4) : d.x)
-        setY(d.y < 30 ? 30 : d.y > window.innerHeight - (h / 2) ? window.innerHeight - (h / 2) : d.y)
+        setY(d.y < 30 ? 37 : d.y > window.innerHeight - (h / 2) ? window.innerHeight - (h / 2) : d.y)
     }, [w, h])
 
     const handleResize = useCallback((e, direction, ref, delta, position) => {
@@ -30,7 +31,7 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children }) => 
         setY(newY);
     }, [])
 
-    // 🔥 Close handler with animation
+    // Close handler with animation
     const handleClose = () => {
         setClosing(true);
 
@@ -48,8 +49,10 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children }) => 
             default={{ width: w, height: h }}
             minWidth={300}
             minHeight={200}
+            style={{zIndex: zIndex}}
+            onMouseDown={() => setZIndex(bringToFront())} // Bring to front on click
         >
-            {/* 🔥 dynamic class */}
+            {/* dynamic class */}
             <div className={`window ${closing ? "closing" : ""}`}>
                 <div className="window-nav">
                     <div

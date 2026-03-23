@@ -20,3 +20,12 @@
         width: 165px;
     }
 }
+
+@media (max-width: 600px) {
+    .nav{
+        padding-inline: 0.25rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

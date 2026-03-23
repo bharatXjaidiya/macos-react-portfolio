@@ -77,5 +77,16 @@
             padding: 0.5rem;
         }
     }
-  /* tablet styles */
+}
+@media (max-width: 500px) {
+    .dock {
+        gap: 0.25rem;
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
+
+        .icon {
+            width: 2.5rem;
+            padding: 0.25rem;
+        }
+    }
 }

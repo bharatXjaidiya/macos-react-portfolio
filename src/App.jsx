@@ -17,17 +17,24 @@ const App = () => {
     resume: false,
     cli: false
   })
+  
+  const [globalZIndex, setGlobalZIndex] = useState(10) // Start at 10 to avoid conflicts
+  
+  const bringToFront = () => {
+    setGlobalZIndex(prev => prev + 1)
+    return globalZIndex + 1
+  }
   return (
     <main>
       <Navbar />
       <Docs display={display} setDisplay={setDisplay} />
 
       <Suspense fallback={<div className="loader"><div className="spinner"></div></div>}>
-        {display.github && <Github windowName="github" display={display} setDisplay={setDisplay} />}
-        {display.notes && <Notes windowName="notes" display={display} setDisplay={setDisplay} />}
-        {display.spotify && <Spotify windowName="spotify" display={display} setDisplay={setDisplay} />}
-        {display.resume && <Resume windowName="resume" display={display} setDisplay={setDisplay} />}
-        {display.cli && <Cli windowName="cli" display={display} setDisplay={setDisplay} />}
+        {display.github && <Github windowName="github" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+        {display.notes && <Notes windowName="notes" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+        {display.spotify && <Spotify windowName="spotify" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+        {display.resume && <Resume windowName="resume" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+        {display.cli && <Cli windowName="cli" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
       </Suspense>
 
     </main>
