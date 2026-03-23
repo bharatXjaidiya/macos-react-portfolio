@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { lazy, Suspense } from 'react'
 import "./app.scss"
-import Docs from "./components/docs"
+import Docs from "./components/Docs"
 import Navbar from "./components/Navbar"
 const Github = lazy(() => import("./components/windows/Github"))
 const Notes = lazy(() => import("./components/windows/Notes"))
