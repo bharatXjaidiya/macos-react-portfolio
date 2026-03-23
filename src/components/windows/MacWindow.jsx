@@ -46,6 +46,7 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
             onDragStop={(e, d) => handleDrag(d)}
             onResizeStop={handleResize}
             className='rnd'
+            dragHandleClassName='window-nav'
             default={{ width: w, height: h }}
             minWidth={300}
             minHeight={200}

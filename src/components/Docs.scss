@@ -76,6 +76,9 @@
             width: 3rem;
             padding: 0.5rem;
         }
+        .spotify{
+        height: 4rem;
+        }
     }
 }
 @media (max-width: 500px) {
@@ -87,6 +90,9 @@
         .icon {
             width: 2.5rem;
             padding: 0.25rem;
+        }
+        .spotify{
+        height: 3rem;
         }
     }
 }
