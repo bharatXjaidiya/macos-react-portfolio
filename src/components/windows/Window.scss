@@ -1,41 +1,74 @@
-.window{
-    background-color: black;
-    border-radius: 10px;
-    height: 100%;
-    overflow: hidden;
-    .window-nav{
-        display: flex;
-        gap: 5px;
-        border-bottom: 1px solid gray;
-        padding: 3px 5px;
-        position: overflow;
-        width: 100%;
-        background-color: rgb(31, 30, 30);
-        border-radius: 5px;
-        border-bottom: none;
-        
-        p{
-            color: rgb(139, 135, 135);
-        }
-        .dot{
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            
-        }
-        .red{
-                background-color: rgb(226, 48, 48);
-                cursor: default;
-            }
-            .yellow{
-                background-color: rgb(222, 222, 81);
-            }
-            .green{
-                background-color: rgb(28, 172, 28);
-                margin-right: 5px;
-            }
-    }
-    .main-content{
-        height: 100%;
-    }
+.rnd {
+  position: absolute;
+}
+
+.window {
+  width: 100%;
+  height: 100%;
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  animation: openWindow 0.25s ease-out;
+}
+
+.window-nav {
+  height: 30px;
+  background: #2c2c2c;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+  cursor: grab;
+
+  p {
+    color: #aaa;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+  cursor: pointer;
+}
+
+.yellow {
+  background: #ffbd2e;
+}
+
+.green {
+  background: #27c93f;
+}
+
+.main-content {
+  flex: 1;
+  overflow: auto;
+}
+
+/* 🔥 Smooth open animation */
+@keyframes openWindow {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 📱 Mobile full screen */
+@media (max-width: 768px) {
+  .window {
+    border-radius: 0;
+  }
 }

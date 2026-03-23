@@ -4,8 +4,7 @@ const Time = () => {
     const [time, setTime] = useState("")
 
     useEffect(() => {
-
-        setInterval(() => {
+        const interval = setInterval(() => {
             const now = new Date()
             const day = now.toLocaleDateString('en-US', { weekday: 'short' })
             const date = now.toLocaleDateString('en-US', { day: 'numeric', month: 'short' })
@@ -18,7 +17,7 @@ const Time = () => {
 
         }, 1000)
 
-
+        return () => clearInterval(interval)
 
     }, [])
     return (

@@ -64,3 +64,18 @@
     }
 
 }
+
+
+@media (max-width: 600px) {
+    .dock {
+        gap: 0.5rem;
+        padding-inline: 0.75rem;
+        padding-block: 0.5rem;
+
+        .icon {
+            width: 3rem;
+            padding: 0.5rem;
+        }
+    }
+  /* tablet styles */
+}

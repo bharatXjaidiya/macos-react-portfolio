@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { memo } from 'react'
 import "./Card.scss"
-const Card = ({imgUrl,title,description,tags,repoLink,demoLink}) => {
+const Card = memo(({imgUrl,title,description,tags,repoLink,demoLink}) => {
   return (
     <div className='card'>
         <img src={imgUrl} alt="" />
@@ -17,6 +17,6 @@ const Card = ({imgUrl,title,description,tags,repoLink,demoLink}) => {
         </div>
     </div>
   )
-}
+})
 
 export default Card
