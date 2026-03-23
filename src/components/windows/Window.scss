@@ -53,8 +53,18 @@
   flex: 1;
   overflow: auto;
 }
+.window {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.2s ease;
+}
 
-/* 🔥 Smooth open animation */
+/* closing animation */
+.window.closing {
+  transform: scale(0.7);
+  opacity: 0;
+}
+/* Smooth open animation */
 @keyframes openWindow {
   0% {
     opacity: 0;
@@ -66,7 +76,7 @@
   }
 }
 
-/* 📱 Mobile full screen */
+/* Mobile full screen */
 @media (max-width: 768px) {
   .window {
     border-radius: 0;
