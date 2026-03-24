@@ -59,6 +59,7 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: auto;
+
 }
 .window {
   transform: scale(1);
@@ -94,10 +95,8 @@
   }
 }
 
-
 @media (max-width: 600px) {
-  .window {
-    width: 100vw !important;
-    height: 94.5vh !important;
+  .main-content {
+    padding-bottom: 60px;
   }
 }

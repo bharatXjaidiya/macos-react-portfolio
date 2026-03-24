@@ -48,7 +48,10 @@ const App = () => {
 
   const handleContext = (e) => {
     e.preventDefault()
-    showContextMenu(e.clientX, e.clientY)
+    showContextMenu(e.clientX, e.clientY);
+    setTimeout(() => {
+      SetShowChangeWallpaper(prev => ({ ...prev, show: false }))
+    }, 2000);
   }
 
   const handleTouchStart = (e) => {

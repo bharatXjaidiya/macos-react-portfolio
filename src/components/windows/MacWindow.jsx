@@ -45,7 +45,7 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
     };
 
     // minimize handler with animation
-    const minimizeHandle =()=>{
+    const minimizeHandle = () => {
         setMinimize(true);
 
         setTimeout(() => {
@@ -57,14 +57,15 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
     // Fullscreen handler
     const handleFullScreen = () => {
         setX(0);
-        window.innerWidth < 600 ? setY(50) : setY(24);
+        window.innerWidth < 600 ? setY(30) : setY(50);
+        setZIndex(bringToFront());
         setFullscreen(prev => !prev);
     }
     return (
         <Rnd
             position={{ x, y }}
-            onDragStart={()=>{setFullscreen(false)}}
-            onDragStop={(e, d) => {handleDrag(d)}}
+            onDragStart={() => { setFullscreen(false) }}
+            onDragStop={(e, d) => { handleDrag(d) }}
             onResizeStop={handleResize}
             className={`rnd ${fullscreen ? "fullscreen" : ""}`}
             dragHandleClassName='window-nav'
@@ -75,7 +76,8 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
             onMouseDown={() => setZIndex(bringToFront())} // Bring to front on click
         >
             {/* dynamic class */}
-            <div className={`window ${closing ? "closing" : ""} ${minmize ? "minimize" : ""}`}>
+            <div onContextMenu={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()} className={`window ${closing ? "closing" : ""} ${minmize ? "minimize" : ""}`}>
                 <div className="window-nav">
                     <div
                         onTouchStart={handleClose}
@@ -88,9 +90,9 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
                         onClick={minimizeHandle}
                         className="dot yellow"></div>
                     <div
-                    onTouchStart={handleFullScreen}
-                    onClick={handleFullScreen}
-                     className="dot green"></div>
+                        onTouchStart={handleFullScreen}
+                        onClick={handleFullScreen}
+                        className="dot green"></div>
 
                     <p>bharatjaidiya-zsh</p>
                 </div>
