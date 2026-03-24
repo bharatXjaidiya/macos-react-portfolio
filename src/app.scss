@@ -127,6 +127,7 @@ main{
   overflow: hidden;
 }
 
+/* Wallpaper stays at base */
 .wallpaper-layer {
   position: absolute;
   inset: 0;
@@ -134,8 +135,13 @@ main{
   background-position: center;
 
   opacity: 0;
-  animation: fadeIn 0.25s ease-out forwards;
-  z-index: -1;
+  animation: fadeIn 0.35s ease-in-out forwards;
+  z-index: 0; // ✅ NOT -1
+}
+
+/* Bring UI above */
+.main-container > *:not(.wallpaper-layer) {
+  z-index: 1;
 }
 
 @keyframes fadeIn {
