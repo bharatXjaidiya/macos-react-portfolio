@@ -66,32 +66,58 @@ const App = () => {
     setLastTouchTime(now)
   }
 
+  useEffect(() => {
+  wallpapers.forEach((wallpaper) => {
+    const img = new Image()
+    img.src = `/${wallpaper}`
+  })
+}, [])
+
   return(
-    <main style={{ backgroundImage: `url(/${currentWallpaper})` }} onContextMenu={(e) => handleContext(e)} onTouchStart={(e) => handleTouchStart(e)}>
+    <main 
+  className="main-container"
+  onContextMenu={handleContext} 
+  onTouchStart={handleTouchStart}
+>
 
-      <Navbar />
-      <Docs display={display} setDisplay={setDisplay} />
+  {/* Wallpaper Layer */}
+  <div
+    key={currentWallpaper}
+    className="wallpaper-layer"
+    style={{ backgroundImage: `url(/${currentWallpaper})` }}
+  />
 
-      <Suspense fallback={<div className="loader"><div className="spinner"></div></div>}>
-        {display.github && <Github windowName="github" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
-        {display.notes && <Notes windowName="notes" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
-        {display.spotify && <Spotify windowName="spotify" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
-        {display.resume && <Resume windowName="resume" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
-        {display.cli && <Cli windowName="cli" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
-      </Suspense>
+  <Navbar />
+  <Docs display={display} setDisplay={setDisplay} />
 
-      {showChangeWallpaper.show && (
-        <div onClick={()=>{setCurrentWallpaper(currentWallpaper == wallpapers[wallpapers.length -1] ? wallpapers[0] : wallpapers[wallpapers.indexOf(currentWallpaper) + 1]); SetShowChangeWallpaper({...showChangeWallpaper, show: false})}}
-          className="change-wallpaper"
-          style={{
-            left: `${showChangeWallpaper.x}px`,
-            top: `${showChangeWallpaper.y}px`
-          }}
-        >
-          Right click to change wallpaper
-        </div>
-      )}
-    </main>
+  <Suspense fallback={<div className="loader"><div className="spinner"></div></div>}>
+    {display.github && <Github windowName="github" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+    {display.notes && <Notes windowName="notes" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+    {display.spotify && <Spotify windowName="spotify" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+    {display.resume && <Resume windowName="resume" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+    {display.cli && <Cli windowName="cli" display={display} setDisplay={setDisplay} bringToFront={bringToFront} />}
+  </Suspense>
+
+  {showChangeWallpaper.show && (
+    <div 
+      onClick={()=>{
+        setCurrentWallpaper(
+          currentWallpaper == wallpapers[wallpapers.length -1] 
+          ? wallpapers[0] 
+          : wallpapers[wallpapers.indexOf(currentWallpaper) + 1]
+        ); 
+        SetShowChangeWallpaper({...showChangeWallpaper, show: false})
+      }}
+      className="change-wallpaper"
+      style={{
+        left: `${showChangeWallpaper.x}px`,
+        top: `${showChangeWallpaper.y}px`
+      }}
+    >
+      Right click to change wallpaper
+    </div>
+  )}
+</main>
   )
 }
 
