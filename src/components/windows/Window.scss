@@ -1,17 +1,17 @@
 .rnd {
   position: absolute;
+  transition: all 0.1s ease-out;
 }
 
 .window {
   width: 100%;
   height: 100%;
   background: #1e1e1e;
-  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
   animation: openWindow 0.25s ease-out;
+  border-radius: 7px;
 }
 
 .window-nav {
@@ -46,10 +46,12 @@
 
 .yellow {
   background: #ffbd2e;
+  cursor: pointer;
 }
 
 .green {
   background: #27c93f;
+  cursor: pointer;
 }
 
 .main-content {
@@ -69,6 +71,17 @@
   transform: scale(0.7);
   opacity: 0;
 }
+
+/*  minimize animation */
+.window.minimize {
+  transform: scale(0.3) translateY(300px);
+  opacity: 0;
+}
+/* Fullscreen styles */
+.fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+}
 /* Smooth open animation */
 @keyframes openWindow {
   0% {
@@ -78,12 +91,5 @@
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-/* Mobile full screen */
-@media (max-width: 768px) {
-  .window {
-    border-radius: 0;
   }
 }

@@ -46,7 +46,7 @@ Type 'help' to see all available commands.
   }
 }
   return (
-    <MacWindow  windowName={windowName} display={display} setDisplay={setDisplay} bringToFront={bringToFront} w={window.innerWidth<600?window.innerWidth*0.9:600} h="300">
+    <MacWindow windowName={windowName} display={display} setDisplay={setDisplay} bringToFront={bringToFront} w={window.innerWidth<600?window.innerWidth*0.9:600} h="300">
       <div className='cli-window'>
       <Terminal
         commands={commands}
