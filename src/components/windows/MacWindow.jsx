@@ -57,7 +57,7 @@ const MacWindow = memo(({ windowName, display, setDisplay, h, w, children, bring
     // Fullscreen handler
     const handleFullScreen = () => {
         setX(0);
-        window.innerWidth < 600 ? setY(30) : setY(50);
+        window.innerWidth < 600 ? setY(48) : setY(50);
         setZIndex(bringToFront());
         setFullscreen(prev => !prev);
     }
