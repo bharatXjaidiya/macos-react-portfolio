@@ -93,3 +93,11 @@
     transform: scale(1);
   }
 }
+
+
+@media (max-width: 600px) {
+  .window {
+    width: 100vw !important;
+    height: 94.5vh !important;
+  }
+}
