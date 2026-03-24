@@ -46,6 +46,26 @@ main{
   animation: spin 1s linear infinite;
 }
 
+.context-menu {
+  position: fixed;
+  background: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 5px 0;
+  min-width: 150px;
+  z-index: 9999;
+  color: white;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
