@@ -67,7 +67,7 @@ const App = () => {
   }
 
   return(
-    <main style={{backgroundImage:`url(../public/${currentWallpaper})`}} onContextMenu={(e) => handleContext(e)} onTouchStart={(e) => handleTouchStart(e)}>
+    <main style={{ backgroundImage: `url(/${currentWallpaper})` }} onContextMenu={(e) => handleContext(e)} onTouchStart={(e) => handleTouchStart(e)}>
 
       <Navbar />
       <Docs display={display} setDisplay={setDisplay} />
